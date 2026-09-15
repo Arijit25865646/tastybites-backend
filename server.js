@@ -7,6 +7,7 @@ const connectDB = require("./src/config/db");
 const userRoutes = require("./src/routes/user.routes");
 const adminRoutes = require("./src/routes/admin.routes");
 const menuRoutes = require("./src/routes/menu.routes");
+const orderRoutes = require("./src/routes/order.routes");
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use("/api/auth", userRoutes);
 app.use("/api/users", adminRoutes);
 app.use("/api/menu-items", menuRoutes);
+app.use("/api/orders", orderRoutes);
 
 // Test route
 app.get("/", (req, res) => {
